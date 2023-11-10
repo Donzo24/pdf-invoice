@@ -439,6 +439,16 @@ class InvoicePrinter extends FPDF
         return $this->Output($destination, $name);
     }
 
+    function setFooterImage($path)
+    {
+        $this->Image(
+            $path,
+            5, 
+            $pdf->GetY(), 
+            33.78
+        );
+    }
+
     public function Header()
     {
         if (isset($this->logo) and !empty($this->logo)) {
